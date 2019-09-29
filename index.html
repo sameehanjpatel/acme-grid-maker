@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <link href = style.css rel = "stylesheet">
+</head>
+<body>
+    <div class = "form">
+    <h1>Acme Grid Maker</h1>
+    <form>
+        How many columns?<br>
+        <input type="text" name="columns"><br>
+        How many rows?<br>
+        <input type="text" name="roes"><br>
+        <input type="submit" value="Make Grid">
+    </form>
+    </div>
+    <ul id = "grid">
+    
+    </ul>
+    </body>
+
+    <script>
+    const gridData = [];
+    for(let i = 0; i < 4; i++){
+        let currentRow = [];
+        for(let j = 0; j < 4; j++){
+            currentRow.push("");
+        }
+        gridData.push(currentRow);
+    }
+    
+
+const grid = document.querySelector('#grid');
+    
+const render = (state, container) =>{
+        const html = state.map(item => 
+        `<li>${item}</li>`).join("");
+        container.innerHTML = html;
+    }
+        
+    render(gridData, grid);
+
+    </script>
